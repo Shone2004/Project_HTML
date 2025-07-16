@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reaction Time Record</title>
+  <style>
+    body, html {
+  height: 100%;
+  margin: 2px;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  text-align: start;
+  background-color: #f0f0f0;
+}
+
+#box {
+  width: 100px;
+  height: 100px;
+  background-color: teal;
+  position: relative;
+  margin: 30px auto;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0s ease;
+}
+
+#reaction-time {
+  font-size: large;
+  color: #333;
+}
+  </style>
+</head>
+<body>
+    <script>
+        const box = document.getElementById("box");
+const message = document.getElementById("message");
+const reactionTimeDisplay = document.getElementById("reaction-time");
+
+let startTime;
+function moveBox() {
+  const maxX = window.innerWidth - 100;
+  const maxY = window.innerHeight - 100;
+const randomX = Math.floor(Math.random() * maxX);
+const randomY = Math.floor(Math.random() * maxY);
+box.style.position = "absolute";
+box.style.left = `${randomX}px`;
+box.style.top = `${randomY}px`;
+startTime = new Date().getTime();
+}
+
+box.addEventListener("click", () => {
+  const clickTime = new Date().getTime();
+  const reactionTime = (clickTime - startTime) / 1000; 
+  reactionTimeDisplay.textContent = `Your reaction time: ${reactionTime.toFixed(3)} seconds`;
+  box.style.backgroundColor = getRandomColor();
+
+ 
+  setTimeout(moveBox, 1000);
+});
+
+
+function getRandomColor() {
+    const colors = ["#e74c3c", "#8e44ad", "#3498db", "#27ae60", "#f1c40f"];
+    return colors[Math.floor(Math.random() * colors.length)];
+}
+
+window.onload = () => {
+  moveBox();
+};
+
+    </script>
+  <div class="container">
+    <h1>Click on the Box</h1>
+    <p id="message">Click the box as fast as you can</p>
+    <div id="box"></div>
+    <p id="reaction-time"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
