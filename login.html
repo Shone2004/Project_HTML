@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+<style>
+
+     *{
+        padding: 0;
+        margin: 0;
+     }
+     
+ 
+       body {
+  background: linear-gradient(to left, #4a4a4a, #1c1c1c);
+}
+
+    
+
+     .login-container{
+        position: relative;
+        translate: 480px 200px;
+        background: linear-gradient(135deg, #1c1c1c,#4a4a4a);
+        color: rgb(254, 255, 255);
+        height: 330px;
+        width: 400px; 
+        overflow: visible;    
+        display: flex;
+        border-radius: 30px ;
+        box-shadow: 1px 1.5px 20px rgb(255, 255, 255);
+        
+     }
+
+     .login-container:hover{
+        scale: 1.1;
+        transition-duration: 0.7s ease;
+     }
+
+     .login-name{
+        margin-top: 35px;
+        width: 390px;
+        height: 35px;
+        translate: 6px 0;
+        background: transparent;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid black;
+        font-size: large;
+        color: rgb(141, 133, 133);
+
+     }
+
+    input:hover::placeholder{
+        font-size: 0.6rem;
+        translate: 0 -12px;
+        color: solid wheat;
+    
+    }
+
+     .login-password{
+        margin-top: 35px;
+        width: 390px;
+        height: 35px;
+        translate: 6px 0;
+        background: transparent;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid black;
+        font-size: large;
+        color: rgb(139, 131, 131);
+    
+     }
+
+     p{
+        color: cornsilk;
+     }
+
+     h2{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+     }
+
+     .login-submit{
+        margin-top: 20px;
+        translate: 150px 0;
+        width: 100px;
+        height: 40px;
+        border-radius: 20px;
+        background: transparent;
+        color: rgb(255, 255, 255);
+        box-shadow: 0.6px 1px 8px white;
+     }
+
+     .login-submit:hover{
+         color: rgb(255, 255, 255);
+         background-color: #0c0c0c;
+     }
+
+     .new-login{
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 25px;
+        font-size: large;
+     }
+
+     a{
+        color: rgb(0, 0, 0);
+        font-weight: 600;
+        font-size: large;
+     }
+
+     p{
+        position: relative;
+        translate: -30px 0;
+     }
+</style>
+
+
+</head>
+<body>
+    <div class="login-container">
+        <form >
+            <h2>Please Login ! </h2>
+            <input class="login-name" type="text" placeholder="Enter Username" >
+            <input class="login-password" type="password" placeholder="Password" >
+            <input class="login-submit" type="submit" placeholder="Submit">
+        <div class="new-login"> <p>Do not have account?</p><a href="signup">Register</a></div>
+        </form>
+
+
+    </div>
+</body>
+</html>
